@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import './assets/style.css'
+import React, { useState } from "react"
+import "./assets/style.css"
 
 
 export interface InputProps {
-    type?: 'text' | 'password' | 'number'
+    type?: "text" | "password" | "number"
     clearable?: boolean
 }
 
-export const Input = ({ type = 'text', clearable = false, ...props }: InputProps) => {
+export const Input = ({ type = "text", clearable = false, ...props }: InputProps) => {
     const [showPassword, setShowPassword] = useState(false)
     const [internalText, setInternalText] = useState("")
 
@@ -19,7 +19,7 @@ export const Input = ({ type = 'text', clearable = false, ...props }: InputProps
     }
 
     function getInputPattern() {
-        if (type === 'number') {
+        if (type === "number") {
             return "[0-9]"
         }
         return ""
@@ -36,18 +36,18 @@ export const Input = ({ type = 'text', clearable = false, ...props }: InputProps
 
     return (
         <div
-            className={["input-container"].join(' ')}
+            className={["input-container"].join(" ")}
         >
             <input
                 type={getInputType()}
                 pattern={getInputPattern()}
                 value={internalText}
                 onChange={(e) => onChange(e)}
-                className={['storybook-input', `storybook-input--${type}`, "input-field"].join(' ')}
+                className={["storybook-input", `storybook-input--${type}`, "input-field"].join(" ")}
                 {...props}
             >
             </input>
-            <div className='input-actions'>
+            <div className="input-actions">
                 {clearable && (
                     <button type="button" onClick={onClear} className="clear-button">
                         X

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
-import './assets/style.css'
-import type { Variant } from './types'
+import React, { useEffect, useRef, useState } from "react"
+import "./assets/style.css"
+import type { Variant } from "./types"
 
 
 export interface ToastProps {
@@ -15,13 +15,11 @@ export interface ToastProps {
     position?: "top-right" | "top-left" | "bottom-right" | "bottom-left";
 }
 
-export const Toast = ({ title, description, duration = 4000, variant = 'default', actionLabel, onAction, dismissible = false, onDismiss, position = "bottom-right" }: ToastProps) => {
+export const Toast = ({ title, description, duration = 4000, variant = "default", actionLabel, onAction, dismissible = false, onDismiss, position = "bottom-right" }: ToastProps) => {
     const [hover, setHover] = useState(false);
     const [elapsed, setElapsed] = useState(0);
     const startedAt = useRef<number | null>(null);
     const timer = useRef<number | null>(null);
-
-    function onDismiss() { }
 
     const clear = () => {
         if (timer.current) {
@@ -58,13 +56,13 @@ export const Toast = ({ title, description, duration = 4000, variant = 'default'
 
     return (
         <div
-            className={["toast-viewport", position].join(' ')}
+            className={["toast-viewport", position].join(" ")}
             role="region"
             aria-live="polite"
             aria-label="Notifications"
         >
             <div
-                className={["toast", variant].join(' ')}
+                className={["toast", variant].join(" ")}
                 role="status"
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
@@ -77,7 +75,7 @@ export const Toast = ({ title, description, duration = 4000, variant = 'default'
                     <div className="toast-actions">
                         {actionLabel && (
                             <button
-                                className={["toast-btn", "action"].join(' ')}
+                                className={["toast-btn", "action"].join(" ")}
                                 onClick={() => {
                                     onAction?.();
                                     onDismiss?.();
@@ -88,7 +86,7 @@ export const Toast = ({ title, description, duration = 4000, variant = 'default'
                         )}
                         {dismissible && (
                             <button
-                                className={["toast-btn", "close"].join(' ')}
+                                className={["toast-btn", "close"].join(" ")}
                                 aria-label="Close" onClick={() => onDismiss?.()}
                             >
                                 ×

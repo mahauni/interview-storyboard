@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import './assets/style.css'
-import type { MenuType } from './types/menu.type';
+import React, { useState } from "react";
+import "./assets/style.css"
+import type { MenuType } from "./types/menu.type";
 
 type SidebarMenuProps = {
     isOpen?: boolean
@@ -31,7 +31,7 @@ export const SidebarMenu = ({ isOpen = false, menuData }: SidebarMenuProps) => {
     return (
         <>
             {menuOpen && <div className="sidebar-backdrop" onClick={onOutsideClick} />}
-            <div className={`sidebar ${menuOpen ? 'open' : ''}`} onClick={onOpen}>
+            <div className={`sidebar ${menuOpen ? "open" : ""}`} onClick={onOpen}>
                 {menuOpen && (
                     <ul className="menu">
                         {menuData.map((item: MenuType, index: number) => (
@@ -40,7 +40,7 @@ export const SidebarMenu = ({ isOpen = false, menuData }: SidebarMenuProps) => {
                                     className="menu-item"
                                     onClick={() => item.submenu && toggleSubmenu(index)}
                                 >
-                                    {item.title} {item.submenu && <span>{openSubmenus[index] ? '▲' : '▼'}</span>}
+                                    {item.title} {item.submenu && <span>{openSubmenus[index] ? "▲" : "▼"}</span>}
                                 </div>
                                 {item.submenu && openSubmenus[index] && (
                                     <ul className="submenu">
