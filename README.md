@@ -23,4 +23,9 @@ The storybook should be running in the http://localhost:6060
 ![Open Sidebar](assets/sidebar/sidebar-open.png)
 ![ClosedSidebar](assets/sidebar/sidebar-closed.png)
 
+## Or you can view with the Storybook
 
+### Storybook
+![Storybook sidebar](assets/storybook/storybook-sidebar.png)
+![Storybook toast](assets/storybook/storybook-toast.png)
+![Storybook input](assets/storybook/storybook-input.png)
