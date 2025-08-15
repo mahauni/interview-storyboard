@@ -1,0 +1,79 @@
+.input-wrapper {
+    width: 100%;
+    max-width: 400px;
+    font-family: sans-serif;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field.has-actions {
+    padding-right: 90px;
+    /* space for clear and toggle buttons */
+}
+
+.input-field:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.input-field:disabled {
+    opacity: 0.6;
+    background-color: #f9f9f9;
+}
+
+.input-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.clear-button {
+    position: absolute;
+    right: 50px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    color: #000;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.toggle-password:hover {
+    color: #000;
+}
